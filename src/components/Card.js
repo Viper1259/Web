@@ -4,9 +4,9 @@ import moment from 'moment';
 
 const TaskCard = ({ taskObj, index, deleteTask, updateListArray }) => {
     const categoryColors = {
-        Work: { primaryColor: "#5D93E1", secondaryColor: "#ECF3FC" },
-        Personal: { primaryColor: "#F9D288", secondaryColor: "#FEFAF1" },
-        Shopping: { primaryColor: "#5DC250", secondaryColor: "#F2FAF1" },
+        Ready: { primaryColor: "#5D93E1", secondaryColor: "#ECF3FC" },
+        Make: { primaryColor: "#F9D288", secondaryColor: "#FEFAF1" },
+        Presentation: { primaryColor: "#5DC250", secondaryColor: "#F2FAF1" },
         Others: { primaryColor: "#F48687", secondaryColor: "#FDF1F1" }
     };
 
