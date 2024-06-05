@@ -72,9 +72,8 @@ const EditTaskPopup = ({ modal, toggle, updateTask, taskObj }) => {
                         sx={{ mb: 2 }}
                     >
                         <MenuItem value="Work">Work</MenuItem>
-                        <MenuItem value="Personal">Personal</MenuItem>
-                        <MenuItem value="Shopping">Shopping</MenuItem>
-                        <MenuItem value="Others">Others</MenuItem>
+                        <MenuItem value="Study">Personal</MenuItem>
+                        <MenuItem value="Rest">Shopping</MenuItem>                        
                     </TextField>
                     <DatePicker
                         selected={deadline}
