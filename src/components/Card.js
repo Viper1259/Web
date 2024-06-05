@@ -7,7 +7,6 @@ const TaskCard = ({ taskObj, index, deleteTask, updateListArray }) => {
         Ready: { primaryColor: "#5D93E1", secondaryColor: "#ECF3FC" },
         Make: { primaryColor: "#F9D288", secondaryColor: "#FEFAF1" },
         Presentation: { primaryColor: "#5DC250", secondaryColor: "#F2FAF1" },
-        Others: { primaryColor: "#F48687", secondaryColor: "#FDF1F1" }
     };
 
     const colors = categoryColors[taskObj.Category] || { primaryColor: "#B964F7", secondaryColor: "#F3F0FD" };
