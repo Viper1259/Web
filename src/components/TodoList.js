@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Box, Button, Typography } from '@mui/material';
 import CreateTaskPopup from '../modals/CreateTask';
 import EditTaskPopup from '../modals/EditTask';
-import TaskCard from './Card.js';
+import TaskCard from './Card';
 
 const TodoList = () => {
     const [modal, setModal] = useState(false);
@@ -37,7 +37,9 @@ const TodoList = () => {
         setModal(!modal);
     };
 
-    const toggleEdit = () => {
+    const toggleEdit = (taskObj, index) => {
+        setSelectedTask(taskObj);
+        setSelectedIndex(index);
         setEditModal(!editModal);
     };
 
@@ -47,12 +49,6 @@ const TodoList = () => {
         localStorage.setItem("taskList", JSON.stringify(tempList));
         setTaskList(tempList);
         setModal(false);
-    };
-
-    const editTask = (taskObj, index) => {
-        setSelectedTask(taskObj);
-        setSelectedIndex(index);
-        setEditModal(true);
     };
 
     const updateTask = (taskObj) => {
@@ -71,14 +67,15 @@ const TodoList = () => {
                         taskObj={obj}
                         index={index}
                         deleteTask={deleteTask}
-                        updateListArray={editTask} // 변경
+                        updateListArray={updateListArray}
+                        toggleEdit={toggleEdit}
                     />
                 ))}
             </Box>
             <CreateTaskPopup toggle={toggle} modal={modal} save={saveTask} />
             {selectedTask && (
                 <EditTaskPopup 
-                    toggle={toggleEdit} 
+                    toggle={() => setEditModal(!editModal)} 
                     modal={editModal} 
                     updateTask={updateTask} 
                     taskObj={selectedTask} 
