@@ -29,7 +29,7 @@ const EditTaskPopup = ({ modal, toggle, updateTask, taskObj }) => {
 
     const handleUpdate = (e) => {
         e.preventDefault();
-        let tempObj = { Name: taskName, Description: description, Category: category, Deadline: deadline };
+        let tempObj = { Name: taskName, Description: description, Category: category, Deadline: deadline, completed: taskObj.completed };
         updateTask(tempObj);
     };
 
@@ -72,8 +72,8 @@ const EditTaskPopup = ({ modal, toggle, updateTask, taskObj }) => {
                         sx={{ mb: 2 }}
                     >
                         <MenuItem value="Work">Work</MenuItem>
-                        <MenuItem value="Study">Personal</MenuItem>
-                        <MenuItem value="Rest">Shopping</MenuItem>                        
+                        <MenuItem value="Study">Study</MenuItem>
+                        <MenuItem value="Rest">Rest</MenuItem>                        
                     </TextField>
                     <DatePicker
                         selected={deadline}
