@@ -22,7 +22,7 @@ const CreateTaskPopup = ({ modal, toggle, save }) => {
 
     const handleSave = (e) => {
         e.preventDefault();
-        let taskObj = { Name: taskName, Description: description, Category: category, Deadline: deadline };
+        let taskObj = { Name: taskName, Description: description, Category: category, Deadline: deadline, completed: false };
         save(taskObj);
     };
 
@@ -65,8 +65,8 @@ const CreateTaskPopup = ({ modal, toggle, save }) => {
                         sx={{ mb: 2 }}
                     >
                         <MenuItem value="Work">Work</MenuItem>
-                        <MenuItem value="Study">Personal</MenuItem>
-                        <MenuItem value="Rest">Shopping</MenuItem>                        
+                        <MenuItem value="Study">Study</MenuItem>
+                        <MenuItem value="Rest">Rest</MenuItem>                        
                     </TextField>
                     <DatePicker
                         selected={deadline}
